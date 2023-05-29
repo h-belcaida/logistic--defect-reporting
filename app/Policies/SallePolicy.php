@@ -2,17 +2,18 @@
 
 namespace App\Policies;
 
+use App\Models\Salle;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class UserPolicy
+class SallePolicy
 {
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        if($user->hasPermissionTo('Voir User')) {
+        if($user->hasPermissionTo('Voir Salle')) {
             return true;
         }
         return false;
@@ -21,9 +22,9 @@ class UserPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, User $model): bool
+    public function view(User $user, Salle $salle): bool
     {
-        if($user->hasPermissionTo('Voir User')) {
+        if($user->hasPermissionTo('Voir Salle')) {
             return true;
         }
         return false;
@@ -34,7 +35,7 @@ class UserPolicy
      */
     public function create(User $user): bool
     {
-        if($user->hasPermissionTo('Créer User')) {
+        if($user->hasPermissionTo('Créer Salle')) {
             return true;
         }
         return false;
@@ -43,9 +44,9 @@ class UserPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user): bool
+    public function update(User $user, Salle $salle): bool
     {
-        if($user->hasPermissionTo('Modifier User')) {
+        if($user->hasPermissionTo('Modifier Salle')) {
             return true;
         }
         return false;
@@ -54,9 +55,9 @@ class UserPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user): bool
+    public function delete(User $user, Salle $salle): bool
     {
-        if($user->hasPermissionTo('Supprimer User')) {
+        if($user->hasPermissionTo('Supprimer Salle')) {
             return true;
         }
         return false;
@@ -65,15 +66,15 @@ class UserPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, User $model): bool
+    public function restore(User $user, Salle $salle): bool
     {
-        //
+        
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, User $model): bool
+    public function forceDelete(User $user, Salle $salle): bool
     {
         //
     }
