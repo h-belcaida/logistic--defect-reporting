@@ -12,5 +12,11 @@ class Anomalie extends Model
     protected $fillable = [
         'type',
     ];
+
+    public function rapports()
+    {
+        return $this->hasMany(Rapport::class);
+    }
+
 }
 

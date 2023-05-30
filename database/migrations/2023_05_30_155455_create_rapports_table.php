@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('rapports', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->foreignId('salle_id')->constrained()->onDelete('cascade');
+            $table->foreignId('anomalie_id')->constrained()->onDelete('cascade');
+            $table->string('comment');
+            $table->boolean('est_resolu')->default(false);
             $table->timestamps();
         });
     }
