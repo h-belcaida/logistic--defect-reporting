@@ -19,6 +19,8 @@ class AnomalieResource extends Resource
     protected static ?string $model = Anomalie::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-exclamation';
+    protected static ?int $navigationSort = 3;
+    protected static ?string $navigationGroup = 'AAIT';
 
     public static function form(Form $form): Form
     {

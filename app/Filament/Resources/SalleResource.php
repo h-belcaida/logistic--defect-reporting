@@ -19,6 +19,8 @@ class SalleResource extends Resource
     protected static ?string $model = Salle::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-office-building';
+    protected static ?int $navigationSort = 2;
+    protected static ?string $navigationGroup = 'AAIT';
 
     public static function form(Form $form): Form
     {

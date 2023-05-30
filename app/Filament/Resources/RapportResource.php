@@ -26,7 +26,9 @@ class RapportResource extends Resource
 {
     protected static ?string $model = Rapport::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-document-duplicate';
+    protected static ?int $navigationSort = 1;
+    protected static ?string $navigationGroup = 'AAIT';
 
     public static function form(Form $form): Form
     {
